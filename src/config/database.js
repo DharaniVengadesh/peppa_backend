@@ -9,6 +9,9 @@ module.exports = {
     port: parseInt(process.env.DB_PORT, 10) || 5432,
     dialect: 'postgres',
     logging: false,
+    dialectOptions: {
+      ssl: process.env.DB_SSL === 'true' ? { require: true, rejectUnauthorized: false } : false,
+    },
   },
   test: {
     username: process.env.DB_USER || 'postgres',
