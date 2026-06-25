@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peppa Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login-view" class="login-wrap">
+    <div class="login-card">
+      <h1>Peppa Admin</h1>
+      <p>Super Admin dashboard — manage users, catalog &amp; AI config</p>
+      <div id="login-error" class="error-msg hidden"></div>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" type="email" value="admin@peppa.app" required />
+        <label for="password">Password</label>
+        <input id="password" type="password" value="Admin123!" required />
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="app-view" class="shell hidden">
+    <aside class="sidebar">
+      <div class="logo">Peppa</div>
+      <div class="sub">Super Admin</div>
+      <button class="nav-item active" data-page="dashboard">📊 Dashboard</button>
+      <button class="nav-item" data-page="users">👥 Users</button>
+      <button class="nav-item" data-page="households">🏠 Households</button>
+      <button class="nav-item" data-page="catalog">🛒 Grocery Catalog</button>
+      <button class="nav-item" data-page="cuisines">🍛 Cuisines</button>
+      <button class="nav-item" data-page="gemini">✨ Gemini Config</button>
+      <button class="nav-item" data-page="activity">📋 Activity Logs</button>
+      <div class="sidebar-footer">
+        <div id="admin-name">Admin</div>
+        <button id="logout-btn" class="btn btn-ghost btn-sm" style="margin-top:8px;width:100%">Sign Out</button>
+      </div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <h2 id="page-title">Dashboard</h2>
+        <span id="admin-email" style="font-size:13px;color:var(--text-soft)"></span>
+      </header>
+      <main class="content" id="page-content"></main>
+    </div>
+  </div>
+
+  <div id="modal-root" class="hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
